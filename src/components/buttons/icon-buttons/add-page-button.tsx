@@ -1,5 +1,5 @@
 import { PlusIcon } from "lucide-react";
-import IconButton from "../IconButton";
+import IconButton from "../icon-button";
 
 const AddPageButton = () => {
      return (

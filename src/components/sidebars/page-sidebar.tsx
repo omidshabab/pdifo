@@ -1,6 +1,6 @@
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
-import AddPageButton from "../buttons/IconButtons/AddPageButton";
+import AddPageButton from "../buttons/icon-buttons/add-page-button";
 import { pages } from "@/lib/data";
 import React from "react";
 
