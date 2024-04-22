@@ -1,8 +1,8 @@
 "use client"
 
-import Canvas from "../components/Canvas";
-import PagesSidebar from "../components/sidebars/PageSidebar";
-import PanelSidebar from "../components/sidebars/PanelSidebar";
+import Canvas from "@/components/canvas";
+import PageSidebar from "@/components/sidebars/page-sidebar";
+import PanelSidebar from "@/components/sidebars/panel-sidebar";
 import { Separator } from "@/components/ui/separator";
 import { DndContext } from "@dnd-kit/core";
 
@@ -18,7 +18,7 @@ const Page = () => {
         <Separator
           orientation="vertical"
           className="bg-primary/10" />
-        <PagesSidebar />
+        <PageSidebar />
       </div>
     </DndContext>
   );
