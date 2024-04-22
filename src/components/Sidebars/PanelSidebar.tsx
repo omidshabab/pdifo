@@ -3,11 +3,12 @@
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { ScrollArea } from "../ui/scroll-area";
-import { ArrowLeftIcon, GripIcon, PanelRightOpen, SettingsIcon } from "lucide-react";
-import SettingButton from "../Buttons/IconButtons/SettingButton";
-import PreviewButton from "../Buttons/IconButtons/PreviewButton";
-import { widgets } from "@/lib/data";
+import { ArrowLeftIcon } from "lucide-react";
+import SettingButton from "../buttons/IconButtons/SettingButton";
+import PreviewButton from "../buttons/IconButtons/PreviewButton";
+import { elements } from "@/lib/data";
 import React from "react";
+import Link from "next/link";
 
 type SidebarType = "widgets" | "settings"
 
@@ -17,9 +18,11 @@ const PanelSidebar = () => {
      return (
           <div className="hidden sm:flex flex-col justify-between w-[250px]">
                <div className="flex items-center px-6 pt-5">
-                    <h1 className="flex flex-grow text-[18px] font-medium text-orange-900">
+                    <Link
+                         href="/"
+                         className="flex flex-grow text-[18px] font-medium text-orange-900">
                          Pdifo
-                    </h1>
+                    </Link>
                     <div className="flex flex-row gap-[10px]">
                          <SettingButton onClick={() => setType("settings")} />
                          <PreviewButton />
@@ -28,21 +31,11 @@ const PanelSidebar = () => {
 
                {type === "widgets" && (
                     <ScrollArea className="flex flex-col flex-grow px-6 py-5">
-                         {widgets.map((widget, index) => (
+                         {elements.map((element, index) => (
                               <>
-                                   <div
-                                        key={index}
-                                        className="flex items-center w-full border border-primary/10 px-[15px] py-[10px] cursor-pointer hover:bg-primary/5">
-                                        <p className="flex flex-grow">
-                                             text
-                                        </p>
-                                        <div>
-                                             <GripIcon
-                                                  size={15}
-                                                  className="text-primary/50" />
-                                        </div>
-                                   </div>
-                                   {index < widgets.length && (
+                                   {element}
+
+                                   {index < elements.length && (
                                         <div className="h-[10px]" />
                                    )}
                               </>

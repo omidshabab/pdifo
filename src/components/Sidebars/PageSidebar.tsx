@@ -1,6 +1,6 @@
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
-import AddPageButton from "../Buttons/IconButtons/AddPageButton";
+import AddPageButton from "../buttons/IconButtons/AddPageButton";
 import { pages } from "@/lib/data";
 import React from "react";
 
@@ -11,7 +11,7 @@ import {
      ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 
-import { Trash2Icon, ReplyIcon, SquarePenIcon } from 'lucide-react';
+import { Trash2Icon, SquarePenIcon } from 'lucide-react';
 
 const PageSidebar = () => {
      return (
