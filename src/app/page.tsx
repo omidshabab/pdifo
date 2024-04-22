@@ -1,8 +1,8 @@
 "use client"
 
-import Canvas from "@/components/Canvas";
-import PagesSidebar from "@/components/sidebars/PageSidebar";
-import PanelSidebar from "@/components/sidebars/PanelSidebar";
+import Canvas from "../components/Canvas";
+import PagesSidebar from "../components/sidebars/PageSidebar";
+import PanelSidebar from "../components/sidebars/PanelSidebar";
 import { Separator } from "@/components/ui/separator";
 import { DndContext } from "@dnd-kit/core";
 
