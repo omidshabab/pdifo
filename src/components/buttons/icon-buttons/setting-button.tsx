@@ -1,5 +1,5 @@
 import { SettingsIcon } from "lucide-react";
-import IconButton from "../IconButton";
+import IconButton from "../icon-button";
 
 const SettingButton = ({ ...props }) => {
      return (
