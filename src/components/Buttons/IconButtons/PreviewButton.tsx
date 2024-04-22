@@ -1,5 +1,5 @@
 import { PanelRightOpen } from "lucide-react";
-import IconButton from "../icon-button";
+import IconButton from "../IconButton";
 
 const PreviewButton = () => {
      return (

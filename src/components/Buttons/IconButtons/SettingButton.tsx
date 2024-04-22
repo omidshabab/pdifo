@@ -1,9 +1,9 @@
 import { SettingsIcon } from "lucide-react";
-import IconButton from "../icon-button";
+import IconButton from "../IconButton";
 
-const SettingButton = () => {
+const SettingButton = ({ ...props }) => {
      return (
-          <IconButton>
+          <IconButton {...props}>
                <SettingsIcon size={18} />
           </IconButton>
      );

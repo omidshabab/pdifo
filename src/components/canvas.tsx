@@ -1,4 +1,4 @@
-import { pages } from "@/app/page";
+import { pages } from "@/lib/data";
 import { ScrollArea } from "./ui/scroll-area";
 import { Separator } from "./ui/separator";
 

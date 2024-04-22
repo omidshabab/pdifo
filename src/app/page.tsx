@@ -1,15 +1,12 @@
-import Canvas from "@/components/canvas";
-import PagesSidebar from "@/components/sidebars/pages-sidebar";
-import WidgetsSidebar from "@/components/sidebars/widgets-sidebar";
+import Canvas from "@/components/Canvas";
+import PagesSidebar from "@/components/Sidebars/PageSidebar";
+import PanelSidebar from "@/components/Sidebars/PanelSidebar";
 import { Separator } from "@/components/ui/separator";
-
-export const widgets = [1, 2, 3, 4, 5, 6];
-export const pages = [1, 2, 3, 4, 5, 6]
 
 const Page = () => {
   return (
     <div className="flex flex-row w-full h-full z-20">
-      <WidgetsSidebar />
+      <PanelSidebar />
       <Separator
         orientation="vertical"
         className="bg-primary/10" />

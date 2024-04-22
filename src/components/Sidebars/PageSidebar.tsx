@@ -1,10 +1,9 @@
-import { PlusIcon } from "lucide-react";
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
-import { pages } from "@/app/page";
-import AddPageButton from "../buttons/icon-buttons/add-page-button";
+import AddPageButton from "../Buttons/IconButtons/AddPageButton";
+import { pages } from "@/lib/data";
 
-const PagesSidebar = () => {
+const PageSidebar = () => {
      return (
           <div className="hidden sm:flex flex-col w-[200px]">
                <div className="flex items-center pb-[20px] px-6 py-5">
@@ -38,4 +37,4 @@ const PagesSidebar = () => {
      );
 }
 
-export default PagesSidebar;
+export default PageSidebar;
