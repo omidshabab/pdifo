@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background-color: #fff7ed;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23ea580c' fill-opacity='0.08'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+}
+::-moz-selection { /* Code for Firefox */
+  background: rgb(248 116 22 / 0.1);
+}
+
+::selection {
+  background: rgb(248 116 22 / 0.1);
+}
+
+.none-scroll-bar {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+.none-scroll-bar::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
