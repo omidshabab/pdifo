@@ -4,13 +4,23 @@ import { Separator } from "./ui/separator";
 import Editor from "./Editor";
 import { Input } from "./ui/input";
 import { useState } from "react";
+import UndoButton from "./buttons/icon/UndoButton";
+import RedoButton from "./buttons/icon/RedoButton";
+import { Button } from "./ui/button";
+import PreviewButton from "./buttons/icon/PreviewButton";
+import OpenSidebarButton from "./buttons/icon/OpenSidebarButton";
 
-const Canvas = () => {
-     const [inputValue, setInputValue] = useState<string>("pdifo_pdf_name")
+const Designer = () => {
+     const [inputValue, setInputValue] = useState<string>("Untitled")
 
      return (
           <div className="flex flex-col flex-grow">
-               <div className="flex flex-grow w-full items-center justify-center gap-x-[5px] text-[16px] text-center font-normal text-slate-900 px-6 py-5">
+               <div className="flex flex-grow w-full items-center justify-center gap-x-[25px] text-[16px] text-center font-normal text-slate-900 px-[20px] py-[18px]">
+                    <div className="flex gap-x-[8px]">
+                         <OpenSidebarButton />
+                         <UndoButton />
+                         <RedoButton />
+                    </div>
                     <Input
                          value={inputValue}
                          placeholder="Type your pdf name here"
@@ -18,7 +28,15 @@ const Canvas = () => {
                               setInputValue(e.currentTarget.value)
                          }}
                          maxLength={50}
-                         className="flex flex-grow border-none text-center p-0 text-[16px] focus:border-none focus:ring-none" />
+                         className="flex flex-grow border-none p-0 text-[16px] focus:border-none focus:ring-none" />
+                    <div className="flex gap-x-[10px]">
+                         <PreviewButton />
+                         <Button
+                              size="sm"
+                              variant="secondary">
+                              Save the pdf
+                         </Button>
+                    </div>
                </div>
                <Separator
                     orientation="horizontal"
@@ -48,4 +66,4 @@ const Canvas = () => {
      );
 }
 
-export default Canvas;
+export default Designer;
