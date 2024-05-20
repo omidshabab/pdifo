@@ -3,9 +3,8 @@
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { ScrollArea } from "../ui/scroll-area";
-import { ArrowLeftIcon } from "lucide-react";
 import SettingButton from "../buttons/icon/SettingButton";
-import PreviewButton from "../buttons/icon/PreviewButton";
+import CloseSidebarButton from "../buttons/icon/CloseSidebarButton";
 import React, { ReactNode, useEffect } from "react";
 import Link from "next/link";
 import { SidebarType } from "@/lib/context/EditorContext";
@@ -39,7 +38,7 @@ const PanelSidebar = ({
                               setSelectedElement(null)
                               setPanelType("settings")
                          }} />
-                         <PreviewButton />
+                         <CloseSidebarButton />
                     </div>
                </div>
 
@@ -82,7 +81,7 @@ const PanelSidebar = ({
                <div className="px-6 py-5">
                     <Button
                          variant="outline"
-                         className="w-full bg-transparent rounded-[8px] border-primary/10 px-[15px] py-[10px] text-orange-900 hover:bg-primary/5 hover:text-orange-900">
+                         className="w-full bg-transparent rounded-[8px] border-primary/10 px-[15px] py-[10px] text-text hover:bg-primary/5 hover:text-text">
                          Export the PDF
                     </Button>
                </div>

@@ -1,6 +1,13 @@
 import { z } from "zod";
 import { Element, ElementInstance, ElementType } from "../Element";
 import { SparklesIcon, Text } from "lucide-react";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
+import useEditor from "@/lib/hooks/useEditor";
+import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import { Input } from "../ui/input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "../ui/button";
 
 const type: ElementType = "Icon";
 
@@ -58,60 +65,62 @@ type propertiesFormSchemaType = z.infer<typeof propertiesSchema>;
 
 function PropertiesComponent({ elementInstance }: { elementInstance: ElementInstance }) {
      const element = elementInstance as CustomInstance;
-     // const { updateElement } = useDesigner();
-     // const form = useForm<propertiesFormSchemaType>({
-     //      resolver: zodResolver(propertiesSchema),
-     //      mode: "onBlur",
-     //      defaultValues: {
-     //           title: element.extraAttributes.title,
-     //      },
-     // });
+     const { updateElement } = useEditor();
+     const form = useForm<propertiesFormSchemaType>({
+          resolver: zodResolver(propertiesSchema),
+          mode: "onBlur",
+          defaultValues: {
+               title: element.extraAttributes.title,
+          },
+     });
 
-     // useEffect(() => {
-     //      form.reset(element.extraAttributes);
-     // }, [element, form]);
+     useEffect(() => {
+          form.reset(element.extraAttributes);
+     }, [element, form]);
 
-     // function applyChanges(values: propertiesFormSchemaType) {
-     //      const { title } = values;
-     //      updateElement(element.id, {
-     //           ...element,
-     //           extraAttributes: {
-     //                title,
-     //           },
-     //      });
-     // }
+     function applyChanges(values: propertiesFormSchemaType) {
+          const { title } = values;
+          updateElement(element.id, {
+               ...element,
+               extraAttributes: {
+                    title,
+               },
+          });
+     }
 
      return (
-          <div>
-               Properties builder
-          </div>
-          // <Form {...form}>
-          //      <form
-          //           onBlur={form.handleSubmit(applyChanges)}
-          //           onSubmit={(e) => {
-          //                e.preventDefault();
-          //           }}
-          //           className="space-y-3"
-          //      >
-          //           <FormField
-          //                control={form.control}
-          //                name="title"
-          //                render={({ field }) => (
-          //                     <FormItem>
-          //                          <FormLabel>Title</FormLabel>
-          //                          <FormControl>
-          //                               <Input
-          //                                    {...field}
-          //                                    onKeyDown={(e) => {
-          //                                         if (e.key === "Enter") e.currentTarget.blur();
-          //                                    }}
-          //                               />
-          //                          </FormControl>
-          //                          <FormMessage />
-          //                     </FormItem>
-          //                )}
-          //           />
-          //      </form>
-          // </Form>
+          <Form {...form}>
+               <form
+                    onBlur={form.handleSubmit(applyChanges)}
+                    onSubmit={(e) => {
+                         e.preventDefault();
+                    }}>
+                    <FormField
+                         control={form.control}
+                         name="title"
+                         render={({ field }) => (
+                              <FormItem className="flex flex-col gap-y-[5px]">
+                                   <FormControl>
+                                        <Input
+                                             {...field}
+                                             onKeyDown={(e) => {
+                                                  if (e.key === "Enter") e.currentTarget.blur();
+                                             }}
+                                             placeholder="Type the icon title"
+                                             className="px-0"
+                                        />
+                                   </FormControl>
+                                   <FormMessage className="text-text font-normal text-[12px]" />
+                                   <Button
+                                        variant="secondary"
+                                        size="sm"
+                                        className="w-full">
+                                        Submit the Text
+                                   </Button>
+                              </FormItem>
+                         )}
+                    />
+               </form>
+          </Form>
      );
 }

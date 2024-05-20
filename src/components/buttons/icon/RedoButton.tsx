@@ -1,15 +1,15 @@
 "use client"
 
-import { EyeIcon } from "lucide-react"
+import { RedoIcon } from "lucide-react"
 import NavIconButton from "../NavIconButton";
 
-const PreviewButton = () => {
+const RedoButton = () => {
      return (
           <NavIconButton
                onClick={() => null}>
-               <EyeIcon className="text-text h-5 w-5" />
+               <RedoIcon className="text-text h-5 w-5" />
           </NavIconButton>
      );
 }
 
-export default PreviewButton;
+export default RedoButton;

@@ -33,6 +33,10 @@ const Editor = () => {
                     const newElement = Elements[type as ElementType].construct(idGenerator());
 
                     addElement(elements.length, newElement);
+
+                    setSelectedElement(newElement)
+                    setPanelType("editor")
+
                     return;
                }
 
@@ -63,6 +67,10 @@ const Editor = () => {
                     }
 
                     addElement(indexForNewElement, newElement);
+
+                    setSelectedElement(newElement)
+                    setPanelType("editor")
+
                     return;
                }
 
@@ -93,6 +101,9 @@ const Editor = () => {
                     }
 
                     addElement(indexForNewElement, activeElement);
+
+                    setSelectedElement(activeElement)
+                    setPanelType("editor")
                }
           },
      });
