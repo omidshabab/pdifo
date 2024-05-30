@@ -2,6 +2,7 @@ import { z } from "zod";
 import { Element, ElementInstance, ElementType } from "../Element";
 import { SquareMousePointerIcon, Text } from "lucide-react";
 import { useEffect } from "react";
+import { Button } from "../ui/button";
 
 const type: ElementType = "Button";
 
@@ -42,7 +43,7 @@ function CanvasComponent({ elementInstance }: { elementInstance: ElementInstance
      const element = elementInstance as CustomInstance;
      const { title } = element.extraAttributes;
      return (
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex items-start text-start justify-start w-full">
                {title}
           </div>
      );
