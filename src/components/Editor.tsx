@@ -211,7 +211,7 @@ export const EditorElementWrapper = ({ element }: { element: ElementInstance }) 
 
                <div
                     className={cn(
-                         "relative flex flex-col text-foreground hover:cursor-pointer hover:bg-primary/[3%] border-[2px] border-dashed border-primary/20 hover:border-primary/35 px-[20px] py-[15px] rounded-[10px] transition-all duration-300",
+                         "relative flex flex-col h-min text-foreground hover:cursor-pointer hover:bg-primary/[3%] border-[2px] border-dashed border-primary/20 hover:border-primary/35 px-[20px] py-[15px] rounded-[10px] transition-all duration-300",
                          mouseIsOver || selectedElement?.id === element.id && "border-primary/35"
                     )}
                     onMouseEnter={() => {
@@ -224,17 +224,20 @@ export const EditorElementWrapper = ({ element }: { element: ElementInstance }) 
                          e.stopPropagation();
                          setSelectedElement(element);
                          setPanelType("editor")
-                    }}>
+                    }}
+               >
 
                     <ContextMenu>
                          <ContextMenuTrigger>
                               <div
-                                   className="flex flex-col w-full items-center pointer-events-none opacity-100">
-                                   <div ref={topHalf.setNodeRef} className="absolute w-full h-1/2 rounded-full" />
+                                   className="flex flex-col w-full items-center opacity-100">
+                                   <div ref={topHalf.setNodeRef} className="absolute w-full top-0 h-1/2 rounded-t-[10px]" />
 
-                                   <EditorElement elementInstance={element} />
+                                   <div ref={bottomHalf.setNodeRef} className="absolute w-full bottom-0 h-1/2 rounded-b-[10px]" />
 
-                                   <div ref={bottomHalf.setNodeRef} className="absolute w-full bottom-0 h-1/2 rounded-full" />
+                                   <div className="flex flex-col w-full flex-grow">
+                                        <EditorElement elementInstance={element} />
+                                   </div>
                               </div>
                          </ContextMenuTrigger>
                          <ContextMenuContent className="w-auto">

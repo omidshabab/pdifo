@@ -1,10 +1,10 @@
-import { PanelRightOpen } from "lucide-react";
+import { ArrowLeftToLineIcon } from "lucide-react";
 import IconButton from "../IconButton";
 
 const CloseSidebarButton = () => {
      return (
           <IconButton>
-               <PanelRightOpen size={18} />
+               <ArrowLeftToLineIcon size={18} />
           </IconButton>
      );
 }

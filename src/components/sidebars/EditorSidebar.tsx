@@ -28,7 +28,7 @@ const EditorSidebar = () => {
 
                          <div className="flex flex-col gap-y-[10px]">
                               <p className="text-[16px] font-medium">
-                                   {selectedElement.extraAttributes?.title}
+                                   {selectedElement.type} Element
                               </p>
 
                               <PropertiesForm elementInstance={selectedElement} />

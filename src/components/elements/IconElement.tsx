@@ -89,38 +89,34 @@ function PropertiesComponent({ elementInstance }: { elementInstance: ElementInst
      }
 
      return (
-          <Form {...form}>
-               <form
-                    onBlur={form.handleSubmit(applyChanges)}
-                    onSubmit={(e) => {
-                         e.preventDefault();
-                    }}>
-                    <FormField
-                         control={form.control}
-                         name="title"
-                         render={({ field }) => (
-                              <FormItem className="flex flex-col gap-y-[5px]">
-                                   <FormControl>
-                                        <Input
-                                             {...field}
-                                             onKeyDown={(e) => {
-                                                  if (e.key === "Enter") e.currentTarget.blur();
-                                             }}
-                                             placeholder="Type the icon title"
-                                             className="px-0"
-                                        />
-                                   </FormControl>
-                                   <FormMessage className="text-text font-normal text-[12px]" />
-                                   <Button
-                                        variant="secondary"
-                                        size="sm"
-                                        className="w-full">
-                                        Submit the Text
-                                   </Button>
-                              </FormItem>
-                         )}
-                    />
-               </form>
-          </Form>
+          <div className="flex flex-col gap-[10px]">
+               <Form {...form}>
+                    <form
+                         onBlur={form.handleSubmit(applyChanges)}
+                         onSubmit={(e) => {
+                              e.preventDefault();
+                         }}>
+                         <FormField
+                              control={form.control}
+                              name="title"
+                              render={({ field }) => (
+                                   <FormItem className="flex flex-col gap-y-[5px]">
+                                        <FormControl>
+                                             <Input
+                                                  {...field}
+                                                  onKeyDown={(e) => {
+                                                       if (e.key === "Enter") e.currentTarget.blur();
+                                                  }}
+                                                  placeholder="Type the icon title"
+                                                  className="px-0"
+                                             />
+                                        </FormControl>
+                                        <FormMessage className="text-text font-normal text-[12px]" />
+                                   </FormItem>
+                              )}
+                         />
+                    </form>
+               </Form>
+          </div>
      );
 }
